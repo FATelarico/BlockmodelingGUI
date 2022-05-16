@@ -1,0 +1,68 @@
+div.Header  {
+	font-size: 100%;
+	vertical-align: baseline;
+	position: relative;
+	float: left;
+	width: 100%;
+	height: auto;
+  text-align : center;
+  color : rgb(10, 74, 122);
+  margin-bottom: 4%;
+  background-color : rgb(220, 220, 220)
+}
+td{
+	text-align: center;
+	overflow: hidden;
+}
+div.h1{
+	text-align: center;
+	width:50%;
+	font-size: 150%;
+	font-family: georgia;
+}
+
+div.titleRect{
+  background-color : rgb(218, 218, 218);
+  color : rgb(256, 256, 256);
+  font-size: 100%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  margin-left: 0%;
+  width: 100%;
+  height: 100%;
+}
+
+td {
+	text-align: center;
+}
+
+div.title2  {
+	background-color : inherit;
+	font-size: 40%;
+	vertical-align: baseline;
+	position: relative;
+	float: left;
+	width: 96%;
+	actualWidth: 1598;
+	actualHeight: 253;
+  text-align : left;
+  color : rgb(44, 44, 44);
+  margin-top: 2%;
+  margin-bottom: 1%;
+  margin-left: 2%;
+}
+
+img.HeaderLogo  {
+	font-size: 100%;
+	vertical-align: middle;
+	opacity: 1;
+	transition-duration: 0.25s, 0.25s, 0.25s;
+	transition-timing-function: ease, ease, ease;
+	transition-delay: 0s, 0s, 0s;
+	transition-property: color, background, opacity;
+	margin-top: 10%;
+	margin-right: 10%;
+	margin-bottom: 10%;
+	margin-left: 10%;
+	white-space: nowrap;
+}
