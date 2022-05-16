@@ -1,5 +1,5 @@
 # BlockmodelingGUI
-*Sister project*:[A GUI for Generalised Blockmodeling](https://github.com/FATelarico/GUI-Generalised-Blockmodeling)
+Sister project: *[A GUI for Generalised Blockmodeling](https://github.com/FATelarico/GUI-Generalised-Blockmodeling)*
 
 ## Short Description
 This R package provides some useful tools for Offering an accessible GUI for generalised blockmodeling of single-relation, one-mode networks. The user can execute blockmodeling without having to write a line code by using the app's visual helps. Moreover, there are several ways to visualisations networks and their partitions. Finally, the results can be exported as if they were produced by writing code.
