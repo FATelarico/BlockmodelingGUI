@@ -1,0 +1,57 @@
+citHeader('To cite package this app in any publication please cite the app and the package "blockmodeling" as follows, plus (at least) one of the articles below:')
+     
+# Grab the version and date from the DESCRIPTION file
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
+vers <- paste("R package version", meta$Version)
+aut<-eval(parse(text=meta$"Authors@R"))
+autText<-format(aut, include = c("family", "given"),
+   braces = list(family = c("", ",")))
+
+citEntry(entry = "Article",
+	title = "Generalized blockmodeling of valued networks",
+	volume = "29",
+	shorttitle = "Generalized blockmodeling of valued networks",
+#	doi = "10.1016/j.socnet.2006.04.002",
+	journal = "Social Networks",
+	author = as.person("Aleš Žiberna"),
+	year = "2007",
+	number = "1",
+	pages = "105--126",
+	textVersion= "Žiberna, Aleš (2007). Generalized blockmodeling of valued networks. Social Networks 29(1), 105-126."
+)
+
+citEntry(entry = "Article",
+	title = "Direct and indirect approaches to blockmodeling of valued networks in terms of regular equivalence",
+	volume = "32",
+	shorttitle = "Direct and indirect approaches to blockmodeling of valued networks in terms of regular equivalence",
+	doi = "10.1080/00222500701790207",
+	journal = "Journal of Mathematical Sociology",
+	author = as.person("Aleš Žiberna"),
+	year = "2008",
+	number = "1",
+	pages = "57--84",
+	textVersion = "Žiberna, Aleš (2008). Direct and indirect approaches to blockmodeling of valued networks in terms of regular equivalence. Journal of Mathematical Sociology 32(1), 57–84."
+)
+
+citEntry(entry = "Article",
+	title = "Blockmodeling of Multilevel Networks",
+	volume = "39",
+	shorttitle = "Blockmodeling of Multilevel Networks",
+	doi = "10.1016/j.socnet.2014.04.002",
+	journal = "Social Networks",
+	author = as.person("Aleš Žiberna"),
+ 	year = "2014",
+	pages ="46-61",
+	textVersion = "Žiberna, Aleš (2014). Blockmodeling of multilevel networks. Social Networks 39, 46–61. https://doi.org/10.1016/j.socnet.2014.04.002."
+)
+
+
+citEntry(entry="Manual",
+	title = meta$Title,
+	author= aut,
+	year =year,
+	note =vers,
+	textVersion= paste(autText," (", year, 
+	").  ",meta$Title,", ",
+	vers, ".", sep="")
+)

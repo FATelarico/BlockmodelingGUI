@@ -1,0 +1,102 @@
+TY  - COMP
+TI  - GUI for the Generalised Blockmodeling of Valued Networks
+AU  - Telarico, Fabio Ashtar
+AU  - Žiberna, Aleš
+CY  - Ljubljana (Slovenia)
+DA  - 2022/05/16/
+PY  - 2022
+ET  - 1.8.3
+LA  - R, HTML, CSS
+PB  - Faculty of Social Sciences (FDV) at the University of Ljubljana
+UR  - https://github.com/FATelarico/GUI-Generalised-Blockmodeling
+ER  - 
+
+TY  - JOUR
+TI  - Generalized blockmodeling of sparse networks
+AU  - Žiberna, Aleš
+T2  - Advances in Methodology and Statistics
+AB  - The paper starts with an observation that the blockmodeling of relatively sparse binary networks (where we also expect sparse non-null blocks) is problematic. The use of regular equivalence often results in almost all units being classified in the same equivalence class, while using structural equivalence (binary version) only finds very small complete blocks. Two possible ways of blockmodeling such networks within a binary generalized blockmodeling approach are presented. It is also shown that sum of squares (homogeneity) generalized blockmodeling according to structural equivalence is appropriate for this task, although it suffers from "the null block problem". A solution to this problem is suggested that makes the approach even more suitable. All approaches are also applied to an empirical example. My general suggestion is to use either binary blockmodeling according to structural equivalence with different weights for inconsistencies or sum of squares (homogeneity) blockmodeling with null and constrained complete blocks. The second approach is more appropriate when we want complete blocks to have rows and columns of similar densities and differentiate among complete blocks based on densities. If these aspects are not important the first approach is more appropriate as it does in general produce "cleaner" null blocks.
+DA  - 2013/07/01/
+PY  - 2013
+DO  - 10.51936/orxk5673
+DP  - DOI.org (Crossref)
+VL  - 10
+IS  - 2
+J2  - Adv Meth Stat
+SN  - 1854-0031, 1854-0023
+UR  - https://mz.mf.uni-lj.si/article/view/140
+Y2  - 2022/05/16/16:56:32
+ER  - 
+
+TY  - JOUR
+TI  - Generalized blockmodeling of valued networks
+AU  - Žiberna, Aleš
+T2  - Social Networks
+DA  - 2007/01//
+PY  - 2007
+DO  - 10.1016/j.socnet.2006.04.002
+DP  - DOI.org (Crossref)
+VL  - 29
+IS  - 1
+SP  - 105
+EP  - 126
+J2  - Social Networks
+LA  - en
+SN  - 03788733
+UR  - https://linkinghub.elsevier.com/retrieve/pii/S037887330600013X
+Y2  - 2022/05/16/16:57:12
+ER  - 
+
+TY  - BOOK
+TI  - Generalized Blockmodeling
+AU  - Doreian, Patrick
+AU  - Batagelj, Vladimir
+AU  - Ferligoj, Anuska
+AB  - This book provides an integrated treatment of blockmodeling, the most frequently used technique in social network analysis. It secures its mathematical foundations and then generalizes blockmodeling for the analysis of many types of network structures. Examples are used throughout the text and include small group structures, little league baseball teams, intra-organizational networks, inter-organizational networks, baboon grooming networks, marriage ties of noble families, trust networks, signed networks, Supreme Court decisions, journal citation networks, and alliance networks. Also provided is an integrated treatment of algebraic and graph theoretic concepts for network analysis and a broad introduction to cluster analysis. These formal ideas are the foundations for the authors' proposal for direct optimizational approaches to blockmodeling, which yield blockmodels that best fit the data, a measure of fit that is integral to the establishment of blockmodels - and creates the potential for many generalizations and a deductive use of blockmodeling.
+DA  - 2005///
+PY  - 2005
+DP  - Google Books
+SP  - 410
+LA  - en
+PB  - Cambridge University Press
+SN  - 978-0-521-84085-9
+KW  - Social Science / Methodology
+KW  - Social Science / Sociology / General
+ER  - 
+
+TY  - COMP
+TI  - blockmodeling: Generalized and Classical Blockmodeling of Valued Networks
+AU  - Žiberna, Aleš
+AB  - This is primarily meant as an implementation of generalized blockmodeling for valued networks. In addition, measures of similarity or dissimilarity based on structural equivalence and regular equivalence (REGE algorithms) can be computed and partitioned matrices can be plotted: Žiberna (2007)<doi:10.1016/j.socnet.2006.04.002>, Žiberna (2008)<doi:10.1080/00222500701790207>, Žiberna (2014)<doi:10.1016/j.socnet.2014.04.002>.
+DA  - 2021/09/03/
+PY  - 2021
+DP  - R-Packages
+ET  - 1.0.5
+ST  - blockmodeling
+UR  - https://CRAN.R-project.org/package=blockmodeling
+Y2  - 2022/05/16/17:00:32
+ER  - 
+
+TY  - JOUR
+TI  - blockmodeling: An R package for generalized blockmodeling
+AU  - Matjašič, Miha
+AU  - Cugmas, Marjan
+AU  - Žiberna, Aleš
+T2  - Advances in Methodology and Statistics
+AB  - This paper presents the R package blockmodeling which is primarily meant as an implementation of generalized blockmodeling (more broadly blockmodeling) for valued networks where the values of the ties are assumed to be measured on at least interval scale. Blockmodeling is one of the most commonly used approaches in the analysis of (social) networks, which deals with the analysis of relationships or connections, between the units studied (e.g., peoples, organizations, journals etc.). The R package blockmodeling implements several approaches for the generalized blockmodeling of binary and valued networks. Generalized blockmodeling is commonly used to cluster nodes in a network with regard to the structure of their links. The theoretical foundations of generalized blockmodeling for binary and valued networks are summarized in the paper while the use of the R package blockmodeling is illustrated by applying it to an empirical dataset.
+DA  - 2020/07/01/
+PY  - 2020
+DO  - 10.51936/uhir1119
+DP  - mz.mf.uni-lj.si
+VL  - 17
+IS  - 2
+SP  - 49
+EP  - 66
+LA  - en
+SN  - 1854-0031
+ST  - blockmodeling
+UR  - https://mz.mf.uni-lj.si/article/view/208
+Y2  - 2022/05/17/08:51:01
+L1  - https://mz.mf.uni-lj.si/article/download/208/297
+ER  - 
+

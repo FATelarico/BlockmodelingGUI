@@ -2856,15 +2856,17 @@ server <- function(input, output, session) {
       HTML(paste('<h3>To cite this app in any publication </h3> please cite the app and the package "blockmodeling" as follows, plus <b>(<u>at least</u>) one</b> of the articles below:<br/>',
                      '<b>1. This app/package</b>: <ul><li>Telarico, Fabio Ashtar, and Aleš Žiberna. <i>GUI for the Generalised Blockmodeling of Valued Networks</i> (version 1.8.3). R. Ljubljana (Slovenia): Faculty of Social Sciences (FDV) at the University of Ljubljana, 2022. <a href="https://doi.org/10.5281/zenodo.6554608">https://doi.org/10.5281/zenodo.6554608</a>.</li></ul>',
                      '<b>2. Package "blockmodeling"</b> by Aleš Žiberna:<ul>',
-                     '<li>Žiberna, Aleš. <i>Blockmodeling: Generalized and Classical Blockmodeling of Valued Networks</i> (version 1.0.5), 2021. <a href="https://CRAN.R-project.org/package=blockmodeling">https://CRAN.R-project.org/package=blockmodeling</a>.</li></ul>',
-                     '<b>3. Articles</b>:<ul><li>Doreian, Patrick, Vladimir Batagelj, and Anuska Ferligoj. <i>Generalized Blockmodeling</i>. Cambridge University Press, 2005.</li><li>Matjašič, Miha, Marjan Cugmas, and Aleš Žiberna. ‘Blockmodeling: An R Package for Generalized Blockmodeling’. Preprint. <i>SocArXiv</i>, 8 June 2021. <a href="https://doi.org/10.31235/osf.io/b8cxp">https://doi.org/10.31235/osf.io/b8cxp</a>.</li><li>Žiberna, Aleš. ‘Generalized Blockmodeling of Sparse Networks’. <i>Advances in Methodology and Statistics</i> 10, no. 2 (1 July 2013). <a href="https://doi.org/10.51936/orxk5673">https://doi.org/10.51936/orxk5673</a>.</li><li>Žiberna, Aleš. ‘Generalized Blockmodeling of Valued Networks’. <i>Social Networks</i> 29, no. 1 (January 2007): 105–26. <a href="https://doi.org/10.1016/j.socnet.2006.04.002">https://doi.org/10.1016/j.socnet.2006.04.002</a>.</li></ul>',
+                     '<li>Žiberna, Aleš. <i>Blockmodeling: Generalized and Classical Blockmodeling of Valued Networks</i> (version 1.0.5), 2021. <a href="https://CRAN.R-project.org/package=blockmodeling">https://CRAN.R-project.org/package=blockmodeling</a>.</li>',
+                     '<li>Matjašič, Miha, Marjan Cugmas, and Aleš Žiberna. ‘Blockmodeling: An R Package for Generalized Blockmodeling’. Advances in Methodology and Statistics 17, no. 2 (1 July 2020): 49–66. <a href="https://doi.org/10.51936/uhir1119">https://doi.org/10.51936/uhir1119</a>.</li></ul>',
+                     '<b>3. Methods</b>:<ul>',
+                     '<li>Doreian, Patrick, Vladimir Batagelj, and Anuska Ferligoj. <i>Generalized Blockmodeling</i>. Cambridge University Press, 2005.</li><li>Žiberna, Aleš. ‘Generalized Blockmodeling of Sparse Networks’. <i>Advances in Methodology and Statistics</i> 10, no. 2 (1 July 2013). <a href="https://doi.org/10.51936/orxk5673">https://doi.org/10.51936/orxk5673</a>.</li><li>Žiberna, Aleš. ‘Generalized Blockmodeling of Valued Networks’. <i>Social Networks</i> 29, no. 1 (January 2007): 105–26. <a href="https://doi.org/10.1016/j.socnet.2006.04.002">https://doi.org/10.1016/j.socnet.2006.04.002</a>.</li></ul>',
                  sep = '<br/>')))
 
   ### 23.2 Download RIS file ####
   output$CitationRIS <- downloadHandler(
     filename = 'GUI Citations.ris',
     content = function(file) {
-      writeLines(text = readRDS(file = './RIS Citation.RDS'),
+      writeLines(text = readRDS(file = './RIS_Citation.RDS'),
                  con = file)
     })
 
@@ -2872,7 +2874,7 @@ server <- function(input, output, session) {
   output$CitationBIB <- downloadHandler(
     filename = 'GUI Citations.bib',
     content = function(file) {
-      writeLines(text = readRDS(file = './Bib Citation.RDS'),
+      writeLines(text = readRDS(file = './Bib_Citation.RDS'),
                  con = file)
     })
 
@@ -2880,10 +2882,10 @@ server <- function(input, output, session) {
 
 args = commandArgs(trailingOnly=TRUE)
 
-# Run the application 
-shinyApp(ui = ui, server = server) 
+# Run the application
+shinyApp(ui = ui, server = server)
 if(length(args)==0){
-  shinyApp(ui = ui, server = server)  
+  shinyApp(ui = ui, server = server)
 } else {
   shinyApp(ui = ui, server = server,options=list(launch.browser=as.logical(args[1])))
 }

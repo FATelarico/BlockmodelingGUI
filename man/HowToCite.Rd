@@ -9,6 +9,9 @@ HowToCite(...)
 \arguments{
 \item{...}{Options to pass to cat()}
 }
+\value{
+Returns information on how to run the app.
+}
 \description{
 Show citation info
 }

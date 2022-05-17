@@ -4,10 +4,21 @@
 \alias{GetCitationFile}
 \title{Get citation files}
 \usage{
-GetCitationFile(filetype = c("ris", "BibText"))
+GetCitationFile(
+  filetype = c("ris", "BibText"),
+  folder = getwd(),
+  overwrite = F
+)
 }
 \arguments{
-\item{filetype}{Type of blibliographic file}
+\item{filetype}{Type of bibliographic file can be either \code{'ris'} for RIS files of \code{'BibText'} for BibText files.}
+
+\item{folder}{Folder where to save the file. Defaults to \code{'getwd()'}.}
+
+\item{overwrite}{Boolean. Whether to overwrite namesake files in the target folder.}
+}
+\value{
+Copies the selected type of bibliographic file to the working folder.
 }
 \description{
 Get citation files

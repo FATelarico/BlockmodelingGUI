@@ -9,6 +9,9 @@ app(...)
 \arguments{
 \item{...}{arguments to pass to shiny::runApp}
 }
+\value{
+Runs the app.
+}
 \description{
 Launch Shiny App
 }
