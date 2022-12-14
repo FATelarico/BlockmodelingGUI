@@ -16,6 +16,7 @@ To install the GUI directly from R, run the following code:
   
 ## Acknowledgements
 ![image](https://www.arrs.si/lib/img/arrs-logo-en.gif)
+
 The development of this package is financially supported by the Slovenian Research Agency (www.arrs.gov.si) within the research project J5-2557 (Comparison and evaluation of different approaches to blockmodeling dynamic networks by simulations with application to Slovenian co-authorship networks).
 
 ## Functions in detail
