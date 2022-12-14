@@ -39,88 +39,66 @@ To install the GUI directly from R, run the following code:
 
 i Updating BlockmodelingGUI documentation
 i Loading BlockmodelingGUI
--- Building ---------- BlockmodelingGUI --
+── Checking ───────────────────────────────────────────── BlockmodelingGUI ──
 Setting env vars:
-* CFLAGS    : -Wall -pedantic -fdiagnostics-color=always
-* CXXFLAGS  : -Wall -pedantic -fdiagnostics-color=always
-* CXX11FLAGS: -Wall -pedantic -fdiagnostics-color=always
-* CXX14FLAGS: -Wall -pedantic -fdiagnostics-color=always
-* CXX17FLAGS: -Wall -pedantic -fdiagnostics-color=always
-* CXX20FLAGS: -Wall -pedantic -fdiagnostics-color=always
-------------------------------------------
-v  checking for file 'F:\Testi\Scuola\MA\2021 Ljubljana\Work\02. App\BlockmodelingGUI/DESCRIPTION'
--  preparing 'BlockmodelingGUI':
-v  checking DESCRIPTION meta-information ... 
--  checking for LF line-endings in source and make files and shell scripts
--  checking for empty or unneeded directories
-     NB: this package now depends on R (>= 3.5.0)
-     WARNING: Added dependency on R >= 3.5.0 because serialized objects in
-     serialize/load version 3 cannot be read in older versions of R.
-     File(s) containing such objects:
-       'BlockmodelingGUI/inst/apps/Sample.rds'
--  building 'BlockmodelingGUI_1.8.3.0000.tar.gz'
-   
--- Checking ---------- BlockmodelingGUI --
-Setting env vars:
-* _R_CHECK_CRAN_INCOMING_REMOTE_: FALSE
-* _R_CHECK_CRAN_INCOMING_       : FALSE
-* _R_CHECK_FORCE_SUGGESTS_      : FALSE
-* NOT_CRAN                      : true
--- R CMD check ---------------------------
--  using log directory 'F:/Testi/Scuola/MA/2021 Ljubljana/Work/02. App/BlockmodelingGUI.Rcheck' (360ms)
--  using R version 4.1.2 (2021-11-01)
--  using platform: x86_64-w64-mingw32 (64-bit)
--  using session charset: ISO8859-1
--  using options '--no-manual --as-cran'
-v  checking for file 'BlockmodelingGUI/DESCRIPTION' ... 
--  this is package 'BlockmodelingGUI' version '1.8.3.0000'
--  package encoding: UTF-8
-v  checking package namespace information ... 
-v  checking package dependencies (3s)
-v  checking if this is a source package ...
-v  checking if there is a namespace
-v  checking for executable files (519ms)
-v  checking for hidden files and directories ... 
-v  checking for portable file names ... 
-v  checking whether package 'BlockmodelingGUI' can be installed (2.6s)
-v  checking installed package size ... 
-v  checking package directory
-v  checking for future file timestamps ... 
-v  checking DESCRIPTION meta-information (426ms)
-v  checking top-level files ...
-v  checking for left-over files
-v  checking index information
-v  checking package subdirectories ... 
-v  checking R files for non-ASCII characters ... 
-v  checking R files for syntax errors ... 
-v  checking whether the package can be loaded ... 
-v  checking whether the package can be loaded with stated dependencies ... 
-v  checking whether the package can be unloaded cleanly ... 
-v  checking whether the namespace can be loaded with stated dependencies ... 
-v  checking whether the namespace can be unloaded cleanly (412ms)
-v  checking loading without being on the library search path (475ms)
-v  checking dependencies in R code (811ms)
-v  checking S3 generic/method consistency (712ms)
-v  checking replacement functions ... 
-v  checking foreign function calls ... 
-v  checking R code for possible problems (3.4s)
-v  checking Rd files ... 
-v  checking Rd metadata ... 
-v  checking Rd line widths ... 
-v  checking Rd cross-references ... 
-v  checking for missing documentation entries ... 
-v  checking for code/documentation mismatches (718ms)
-v  checking Rd \usage sections (917ms)
-v  checking Rd contents ... 
-v  checking for unstated dependencies in examples ... 
--  checking examples ... NONE
-v  checking for non-standard things in the check directory
-v  checking for detritus in the temp directory
+• _R_CHECK_CRAN_INCOMING_USE_ASPELL_: TRUE
+• _R_CHECK_CRAN_INCOMING_REMOTE_    : FALSE
+• _R_CHECK_CRAN_INCOMING_           : FALSE
+• _R_CHECK_FORCE_SUGGESTS_          : FALSE
+── R CMD check ──────────────────────────────────────────────────────────────
+─  using log directory ‘/tmp/RtmpaU8PvL/BlockmodelingGUI.Rcheck’
+─  using R version 4.2.2 Patched (2022-11-10 r83330)
+─  using platform: x86_64-pc-linux-gnu (64-bit)
+─  using session charset: UTF-8
+─  using options ‘--no-manual --as-cran’
+✔  checking for file ‘BlockmodelingGUI/DESCRIPTION’
+─  this is package ‘BlockmodelingGUI’ version ‘1.8.4’
+─  package encoding: UTF-8
+✔  checking package namespace information
+✔  checking package dependencies (2.2s)
+✔  checking if this is a source package ...
+✔  checking if there is a namespace
+✔  checking for executable files ...
+✔  checking for hidden files and directories ...
+✔  checking for portable file names
+✔  checking for sufficient/correct file permissions
+✔  checking whether package ‘BlockmodelingGUI’ can be installed (6.6s)
+✔  checking installed package size ...
+✔  checking package directory
+✔  checking for future file timestamps ...
+✔  checking DESCRIPTION meta-information ...
+✔  checking top-level files ...
+✔  checking for left-over files
+✔  checking index information
+✔  checking package subdirectories ...
+✔  checking R files for non-ASCII characters ...
+✔  checking R files for syntax errors ...
+✔  checking whether the package can be loaded (2.1s)
+✔  checking whether the package can be loaded with stated dependencies (1.8s)
+✔  checking whether the package can be unloaded cleanly (2s)
+✔  checking whether the namespace can be loaded with stated dependencies (2s)
+✔  checking whether the namespace can be unloaded cleanly (2.2s)
+✔  checking loading without being on the library search path (2.2s)
+✔  checking dependencies in R code (1.9s)
+✔  checking S3 generic/method consistency (3s)
+✔  checking replacement functions (2s)
+✔  checking foreign function calls (2s)
+✔  checking R code for possible problems (9.2s)
+✔  checking Rd files ...
+✔  checking Rd metadata ...
+✔  checking Rd line widths ...
+✔  checking Rd cross-references ...
+✔  checking for missing documentation entries (2s)
+✔  checking for code/documentation mismatches (5.8s)
+✔  checking Rd \usage sections (2.9s)
+✔  checking Rd contents ...
+✔  checking for unstated dependencies in examples ...
+✔  checking examples (2.9s)
+✔  checking for non-standard things in the check directory
+✔  checking for detritus in the temp directory
    
    
- R CMD check results  BlockmodelingG
-Duration: 19.5s
+── R CMD check results ────────────────────────── BlockmodelingGUI 1.8.4 ────
+Duration: 55.7s
 
-0 errors v | 0 warnings v | 0 notes v
-
-R CMD check succeeded
+0 errors ✔ | 0 warnings ✔ | 0 notes ✔
