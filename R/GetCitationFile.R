@@ -5,9 +5,12 @@
 #' @param overwrite Boolean. Whether to overwrite namesake files in the target folder.
 #'
 #' @return Copies the selected type of bibliographic file to the working folder.
-#'
 #' @export
-#'
+#' @examples
+#' GetCitationFile('ris') # to get the .ris file in the working folder
+
+
+
 GetCitationFile <- function(filetype=c('ris','BibText'),folder=getwd(),overwrite=F) {
   if(filetype!='ris'&&filetype!='BibText'){
     stop('File type not selected correctly. Select one of "ris" or "BibText"!')

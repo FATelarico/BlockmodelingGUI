@@ -23,3 +23,6 @@ Copies the selected type of bibliographic file to the working folder.
 \description{
 Get citation files
 }
+\examples{
+GetCitationFile('ris') # to get the .ris file in the working folder
+}

@@ -1,9 +1,11 @@
 #' Show citation info
 #'
 #' @param ... Options to pass to cat()
-#' @return Returns information on how to run the app.
-#'
+#' @return Returns information on how to cite the app.
 #' @export
+#' @examples
+#' HowToCite() # to see information about citations
+
 HowToCite <- function(...){
   cat(paste('To cite this app in any publication please cite the app and the package "blockmodeling" as follows, plus (at least) one of the articles below:\n',
             'This app/package:',

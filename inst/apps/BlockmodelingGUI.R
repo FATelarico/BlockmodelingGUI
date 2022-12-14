@@ -28,7 +28,7 @@ ui <- fluidPage(
   useShinyjs(), # Initialise Shinyjs
 
   includeCSS("./style.css"), # CSS Styles
-  theme = shinytheme("united"),
+  theme = shinythemes::shinytheme("united"),
   tags$head(
     tags$link(
       rel = "shortcut icon",
@@ -66,7 +66,7 @@ ui <- fluidPage(
     })
   }),
 
-  add_busy_spinner(
+  shinybusy::add_busy_spinner(
     spin = 'breeding-rhombus',
     color = '#978E83',
     timeout = 100,
@@ -895,7 +895,7 @@ ui <- fluidPage(
                  ### 6.3 Table output original matrix ####
                  tableOutput("adj"),
                  ### 6.4 Output plot-matrix ####
-                 plotOutput(outputId = "adjPlot"),
+                 plotOutput(outputId = "adjPlot",height = '100%'),
                ),
              ), #</Sidebarlayout>
 
@@ -914,7 +914,7 @@ ui <- fluidPage(
              conditionalPanel(
                condition = "input.PlotSys == 3",
                ### 7.2 "visNetwork" sys ####
-               visNetworkOutput("igraphPlot",
+               visNetwork::visNetworkOutput("igraphPlot",
                                 height = 640,width = 800),
              ),
 
@@ -1557,6 +1557,30 @@ ui <- fluidPage(
 
              ),
   ),# Tabset panel
+  
+    withTags({
+      div(class="Header",
+          table(
+            tr(
+              td(
+              width = "134px",
+              img(class = "FooterLogo",
+                  src="https://www.arrs.si/lib/img/arrs-logo-en.gif"),
+            ),
+            td(
+              div(style="h3",
+                  b("Acknowledgment of financial support"),
+                  'The development of this package is financially supported by the Slovenian Research Agency (',
+                  a(href="www.arrs.gov.si", "www.arrs.gov.si"),
+                  ') within the research project',
+                  a(href="fdv.uni-lj.si/en/research/institute-of-social-science/national-research-projects/P5438", "J5-2557 (Comparison and evaluation of different approaches to blockmodeling dynamic networks by simulations with application to Slovenian co-authorship networks)"),
+                  '.'
+              ),
+            ),
+            ),
+          ), # /table
+      ) # div "Header"
+    })
 )# ui
 
 #Sect. 2 Output ####
@@ -2115,22 +2139,22 @@ server <- function(input, output, session) {
       ## adds correct labels
       dat3$nodes$label<-dat3$nodes$name
 
-      visNetwork(nodes = dat3$nodes, edges = dat3$edges,
+      visNetwork::visNetwork(nodes = dat3$nodes, edges = dat3$edges,
                  main = input$visTitle,
                  submain = input$visSubtitle,
                  background=input$visBackground)%>%
-        visOptions(nodesIdSelection = T,
+        visNetwork::visOptions(nodesIdSelection = T,
                    height = 600,width = 800,
                    manipulation = F)%>%
-        visNodes(shape = input$visNetworkNodeShape,
+        visNetwork::visNodes(shape = input$visNetworkNodeShape,
                  size = input$visNetworkNodeSize,
                  color = list(border = input$visNetworkNodeBorder),
                  shadow = list(enabled = input$visNetworkNodeShadow,
                                size = input$visNetworkNodeShadowSize))%>%
-        visEdges(shadow = input$visNetworkEdgeShadow,
+        visNetwork::visEdges(shadow = input$visNetworkEdgeShadow,
                  color = list(color = input$visNetworkEdgeColour,
                               highlight = input$visNetworkEdgeHighlight))%>%
-        visHierarchicalLayout(enabled = input$visHier, direction = input$visHierDirection,
+        visNetwork::visHierarchicalLayout(enabled = input$visHier, direction = input$visHierDirection,
                               parentCentralization = input$visHierCentralisation)
 
     }
@@ -2342,7 +2366,7 @@ server <- function(input, output, session) {
                        duration = 10, closeButton = T)
 
       ## Modal spinner, show
-      show_modal_spinner(spin = 'semipolar',
+      shinybusy::show_modal_spinner(spin = 'semipolar',
                          color = "#978E83",
                          text = 'Computing clusters, please wait...')
 
@@ -2385,7 +2409,7 @@ server <- function(input, output, session) {
         )
 
       ## 9.6.1 Modal spinner, remove ####
-      remove_modal_spinner()
+      shinybusy::remove_modal_spinner()
 
       ## 9.6.2 Remember that the blockmodel was run ####
       Blck$RunAlready<<-TRUE
@@ -2853,13 +2877,18 @@ server <- function(input, output, session) {
   ### 23.1 Text to display ####
   output$Info<-
     renderUI(
-      HTML(paste('<h3>To cite this app in any publication </h3> please cite the app and the package "blockmodeling" as follows, plus <b>(<u>at least</u>) one</b> of the articles below:<br/>',
-                     '<b>1. This app/package</b>: <ul><li>Telarico, Fabio Ashtar, and Aleš Žiberna. <i>GUI for the Generalised Blockmodeling of Valued Networks</i> (version 1.8.3). R. Ljubljana (Slovenia): Faculty of Social Sciences (FDV) at the University of Ljubljana, 2022. <a href="https://doi.org/10.5281/zenodo.6554608">https://doi.org/10.5281/zenodo.6554608</a>.</li></ul>',
-                     '<b>2. Package "blockmodeling"</b> by Aleš Žiberna:<ul>',
-                     '<li>Žiberna, Aleš. <i>Blockmodeling: Generalized and Classical Blockmodeling of Valued Networks</i> (version 1.0.5), 2021. <a href="https://CRAN.R-project.org/package=blockmodeling">https://CRAN.R-project.org/package=blockmodeling</a>.</li>',
-                     '<li>Matjašič, Miha, Marjan Cugmas, and Aleš Žiberna. ‘Blockmodeling: An R Package for Generalized Blockmodeling’. Advances in Methodology and Statistics 17, no. 2 (1 July 2020): 49–66. <a href="https://doi.org/10.51936/uhir1119">https://doi.org/10.51936/uhir1119</a>.</li></ul>',
-                     '<b>3. Methods</b>:<ul>',
-                     '<li>Doreian, Patrick, Vladimir Batagelj, and Anuska Ferligoj. <i>Generalized Blockmodeling</i>. Cambridge University Press, 2005.</li><li>Žiberna, Aleš. ‘Generalized Blockmodeling of Sparse Networks’. <i>Advances in Methodology and Statistics</i> 10, no. 2 (1 July 2013). <a href="https://doi.org/10.51936/orxk5673">https://doi.org/10.51936/orxk5673</a>.</li><li>Žiberna, Aleš. ‘Generalized Blockmodeling of Valued Networks’. <i>Social Networks</i> 29, no. 1 (January 2007): 105–26. <a href="https://doi.org/10.1016/j.socnet.2006.04.002">https://doi.org/10.1016/j.socnet.2006.04.002</a>.</li></ul>',
+      HTML(paste('<h3>To cite this app in any publication </h3> Please cite the app and the package "blockmodeling" as follows, plus <b>(<u>at least</u>) one</b> of the articles below:<br/>',
+                 '<b>1. This app/package</b>: <ul><li>Telarico, Fabio Ashtar, and Aleš Žiberna. <i>GUI for the Generalised Blockmodeling of Valued Networks</i> (version 1.8.3). R. Ljubljana (Slovenia): Faculty of Social Sciences (FDV) at the University of Ljubljana, 2022. <a href="https://doi.org/10.5281/zenodo.6554608">https://doi.org/10.5281/zenodo.6554608</a>.</li></ul>',
+                 '<b>2. Package "blockmodeling"</b> by Aleš Žiberna:<ul>',
+                 '<li>Žiberna, Aleš. <i>Blockmodeling: Generalized and Classical Blockmodeling of Valued Networks</i> (version 1.0.5), 2021. <a href="https://CRAN.R-project.org/package=blockmodeling">https://CRAN.R-project.org/package=blockmodeling</a>.</li>',
+                 '<li>Matjašič, Miha, Marjan Cugmas, and Aleš Žiberna. ‘Blockmodeling: An R Package for Generalized Blockmodeling’. Advances in Methodology and Statistics 17, no. 2 (1 July 2020): 49–66. <a href="https://doi.org/10.51936/uhir1119">https://doi.org/10.51936/uhir1119</a>.</li></ul>',
+                 '<b>3. Methods</b>:<ul>',
+                 '<li>Doreian, Patrick, Vladimir Batagelj, and Anuska Ferligoj. <i>Generalized Blockmodeling</i>. Cambridge University Press, 2005.</li><li>Žiberna, Aleš. ‘Generalized Blockmodeling of Sparse Networks’. <i>Advances in Methodology and Statistics</i> 10, no. 2 (1 July 2013). <a href="https://doi.org/10.51936/orxk5673">https://doi.org/10.51936/orxk5673</a>.</li><li>Žiberna, Aleš. ‘Generalized Blockmodeling of Valued Networks’. <i>Social Networks</i> 29, no. 1 (January 2007): 105–26. <a href="https://doi.org/10.1016/j.socnet.2006.04.002">https://doi.org/10.1016/j.socnet.2006.04.002</a>.</li></ul><br/>',
+                 'The development of this package is financially supported by the Slovenian Research Agency (',
+                 a(href="www.arrs.gov.si", "www.arrs.gov.si"),
+                 ') within the research project',
+                 a(href="fdv.uni-lj.si/en/research/institute-of-social-science/national-research-projects/P5438", "J5-2557 (Comparison and evaluation of different approaches to blockmodeling dynamic networks by simulations with application to Slovenian co-authorship networks)"),
+                 '.',
                  sep = '<br/>')))
 
   ### 23.2 Download RIS file ####
@@ -2889,4 +2918,3 @@ if(length(args)==0){
 } else {
   shinyApp(ui = ui, server = server,options=list(launch.browser=as.logical(args[1])))
 }
-

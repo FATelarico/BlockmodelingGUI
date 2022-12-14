@@ -1,0 +1,16 @@
+dcd0f3bdfec4583937b40c845618bfec *DESCRIPTION
+45ea820fe129974fb6c494be8d1c42b3 *NAMESPACE
+221902d016d7f670ee78b8f07abfd280 *R/GetCitationFile.R
+3f681ce56982b523804acf7c1d13dfbc *R/HowToCite.R
+eb856ba8fd02a031e772bc521db2176d *R/app.R
+1b93a08fd34cec1d2457b4666411f6f0 *inst/CITATION
+45237b80e449e84d085a2bed4fd1b862 *inst/apps/Bib_Citation.RDS
+1d912143c1bc83520a78daa8c05c6c9e *inst/apps/BlockmodelingGUI.R
+0ce52153ac3b1f01e3eb4e14c33faf8f *inst/apps/RIS_Citation.RDS
+9436c3bfa0207a3c6f2cf408a69dc87f *inst/apps/Sample.rds
+ba293c956767af1b1a2aed832fda9b96 *inst/apps/style.css
+2a3768810055c8bcaf93e613489f4efd *inst/extdata/citations.bib
+18d3750d2b47d3e250223a5af8fe64ce *inst/extdata/citations.ris
+668d88bbd576d89593fd1976b38ae6b5 *man/GetCitationFile.Rd
+33e7153306ca59e6ecb5d8305e514dbd *man/HowToCite.Rd
+6750f23bbe9bf1c5307c8e61fd8e9a63 *man/app.Rd

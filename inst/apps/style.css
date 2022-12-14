@@ -66,3 +66,18 @@ img.HeaderLogo  {
 	margin-left: 10%;
 	white-space: nowrap;
 }
+
+img.FooterLogo  {
+	font-size: 100%;
+	vertical-align: left;
+	opacity: 1;
+	transition-duration: 0.25s, 0.25s, 0.25s;
+	transition-timing-function: ease, ease, ease;
+	transition-delay: 0s, 0s, 0s;
+	transition-property: color, background, opacity;
+	margin-top: 10%;
+	margin-right: 10%;
+	margin-bottom: 10%;
+	margin-left: 10%;
+	white-space: nowrap;
+}

@@ -15,3 +15,9 @@ Runs the app.
 \description{
 Launch Shiny App
 }
+\examples{
+\dontrun{
+app() # to run the app without special options
+app(launch.browser = T) # to run the app in a new browser session
+}
+}
