@@ -13,8 +13,14 @@ To install the GUI directly from R, run the following code:
   `if(!require(devtools))install.packages('devtools')` 
 2. Install the package from this repository
   `devtools::install_github('FATelarico/BlockmodelingGUI')`
+  
+## Acknowledgements
+![image](https://www.arrs.si/lib/img/arrs-logo-en.gif)
+The development of this package is financially supported by the Slovenian Research Agency (www.arrs.gov.si) within the research project J5-2557 (Comparison and evaluation of different approaches to blockmodeling dynamic networks by simulations with application to Slovenian co-authorship networks).
 
-## The app supports different types of inputs:
+## Functions in detail
+
+### The app supports different types of inputs:
 
 ![image](https://user-images.githubusercontent.com/100512813/159125221-be31c181-a0bb-4399-b410-16f45cb9cfc9.png)
 
